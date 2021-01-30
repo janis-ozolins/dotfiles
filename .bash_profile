@@ -9,14 +9,17 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob;
 
-# Append to the Bash history file, rather than overwriting it
-shopt -s histappend;
+if [ -x "$(command -v shopt)" ]; then
+	# Case-insensitive globbing (used in pathname expansion)
+	shopt -s nocaseglob;
 
-# Autocorrect typos in path names when using `cd`
-shopt -s cdspell;
+	# Append to the Bash history file, rather than overwriting it
+	shopt -s histappend;
+
+	# Autocorrect typos in path names when using `cd`
+	shopt -s cdspell;
+fi
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
