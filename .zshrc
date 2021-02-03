@@ -100,6 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+bindkey \^U backward-kill-line
+
 if [ -f ~/.bash_profile ]; then 
     . ~/.bash_profile;
 fi
